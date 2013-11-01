@@ -9,7 +9,7 @@ module.exports = function( grunt )  {  // (1) : export
           paths : [ "less" ] 
         } ,
         files : { 
-          "dist/jquery.mobile.multibuttonentry.css" : "css/jquery.mobile.multibuttonentry.less" 
+          "css/jquery.mobile.multibuttonentry.css" : "css/jquery.mobile.multibuttonentry.less" 
         } 
       } ,
       production : { 
@@ -21,6 +21,10 @@ module.exports = function( grunt )  {  // (1) : export
           "dist/jquery.mobile.multibuttonentry.min.css" : "css/jquery.mobile.multibuttonentry.less" 
         } 
       } 
+    } ,
+    concat : {
+      'dist/multibuttonentryWidget.js' : ['js/*.js'],
+      'dist/multibuttonentryWidget.css' : ['css/jquery.mobile.multibuttonentry.css', 'css/jquery.mobile-1.3.2.css']
     } ,
     jshint : {
       options :  {
@@ -57,7 +61,8 @@ module.exports = function( grunt )  {  // (1) : export
   // (3) : load plugin task (s)
   grunt.loadNpmTasks ( 'grunt-contrib-jshint' );
   grunt.loadNpmTasks ( 'grunt-contrib-less' );
+  grunt.loadNpmTasks ( 'grunt-contrib-concat' );
  
   // (4) : register default task (s)
-  grunt.registerTask ('default',  ['jshint', 'less:production']);
+  grunt.registerTask ('default',  ['jshint', 'less:development', 'concat']);
 };
