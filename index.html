@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+<!--link rel="stylesheet" href="css/jquery.mobile-1.0.css" /-->
+
+<link rel="stylesheet" href="css/jquery.mobile-1.3.2.css" />
+<link rel="stylesheet" href="css/jquery.mobile.multibuttonentry.css" />
+<script src="js/jquery-1.9.1.js"></script>
+<script src="js/jquery.mobile-1.3.2.js"></script>
+<script src="js/jquery.mobile.multibuttonentry.js"></script>
+</head>
+<body>
+    <div data-role="page" id="root">
+        <div data-role="header">
+            <h1>multibuttonentry</h1>
+        </div>
+        <!-- widget -->
+        <div data-role="content">
+            <div data-role="multibuttonentry" id="multibuttonentryContent" >
+            </div>
+            <div data-role="buttongroup" class="buttonGroup">
+                <button id='inputText'>Input "test"</button>
+                <button id='getInputText'>GetInputText</button>
+                <button id='addItem'>Add Item</button>
+                <button id='addItemToFirst'>Add Item to First Position</button>
+                <button id='remove'>RemoveFirstItem</button>
+                <button id='removeAll'>RemoveAll</button>
+                <button id='getlength'>Get Length</button>
+                <button id='focusIn'>FocusIn</button>
+                <button id='focusOut'>FocusOut</button>
+                <button id='select1stBtn'>select 1st btn</button>
+                <button id='selectBtn'>select</button>
+                <button id='destroy'>destroy</button>
+            </div>
+        </div>
+
+    </div>
+
+    <div data-role ="page" id="addressbook">
+
+        <div data-role="header">
+            <a data-rel="back">Back</a>
+            <h1>address</h1>
+        </div>
+        <div class="content-primary">
+            <ul data-role="listview">
+                <li data-role="list-divider">A</li>
+                    <li><a href="#buttonentry">Adam Kinkaid</a></li>
+                    <li><a href="#buttonentry">Alex Wickerham</a></li>
+                    <li><a href="#buttonentry">Avery Johnson</a></li>
+                    <li data-role="list-divider">B</li>
+                    <li><a href="#buttonentry">Bob Cabot</a></li>
+                    <li data-role="list-divider">C</li>
+                    <li><a href="#buttonentry">Caleb Booth</a></li>
+                    <li><a href="#buttonentry">Christopher Adams</a></li>
+                </ul>
+        </div>
+
+    </div>
+    <script>
+        $( document ).ready( function () {
+            var btnIDX = 0,
+                $multibuttonentry = $( ":jqmData(role='multibuttonentry')" );
+            $multibuttonentry.multibuttonentry( "option", "label", "To : " ).multibuttonentry("refresh");
+
+            $( "#inputText" ).on( "click" , function () {
+                $multibuttonentry.multibuttonentry( "inputText", "test" );
+            });
+
+            $( "#getInputText" ).on( "click" , function () {
+                var text = $multibuttonentry.multibuttonentry( "inputText" );
+                if ( text === null ) {
+                    alert( "plz input some text");    
+                } else {
+                    alert( " Input Text is  : " + text);
+                }
+            });
+
+            $( "#addItem").on( "click" , function () {
+              //  var arg = $("input").val();
+                $multibuttonentry.multibuttonentry( "add", ["addItem"+ ++btnIDX]);
+            });
+            $( "#addItemToFirst" ).on( "click" , function () {
+              //  var arg = $("input").val();
+                $multibuttonentry.multibuttonentry( "add", ["addItem"+ ++btnIDX], [0]);
+            });
+
+            $( "#remove" ).on( "click" , function () {
+                $multibuttonentry.multibuttonentry("remove", [0] );
+            });
+
+            $( "#removeAll" ).on( "click" , function () {
+                btnIDX = 0;
+                $multibuttonentry.multibuttonentry( "remove", "all");
+            });
+
+            $( "#focusIn" ).on( "click" , function () {
+                $multibuttonentry.multibuttonentry( "focusIn" );
+            });
+
+            $( "#focusOut" ).on( "click" , function () {
+                $multibuttonentry.multibuttonentry( "focusOut" );
+            });
+            
+            $( "#getlength" ).on( "click" , function () {
+                alert( "Button length = " + $multibuttonentry.multibuttonentry( "length" ) );
+            });
+
+            $( "#select1stBtn" ).on( "click" , function () {
+                $multibuttonentry.multibuttonentry( "select" , [0]);
+            });
+
+            $( "#selectBtn" ).on( "click" , function () {
+                alert( $multibuttonentry.multibuttonentry( "select" ) );
+            });
+
+            $( "#destroy" ).on( "click" , function () {
+                $multibuttonentry.multibuttonentry( "destroy" );
+            });
+
+            $( ".content-primary a" ).on( "click" , function () {
+               var textStr = $( this ).text();
+               $multibuttonentry.multibuttonentry( "add" , textStr );
+               location.href='#root';
+            } );
+            // $("#multibuttonentryContent").on("select", function(e){
+            //    alert("triggered by click of widget");
+            // });
+       } );
+             //$.mobile.multibuttonentry.prototype.options.label = "TO =  ";
+    </script>
+</body>
+
+</html>

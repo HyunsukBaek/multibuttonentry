@@ -1,0 +1,96 @@
+@mag : 0.5;
+@defaultSize : 2rem * @mag;
+@dist : 0.5rem;
+
+.radius {
+	border-radius: 0.25rem;
+}
+//for testing git status
+.margins (@rem1:0.5rem, @rem2:0.5rem, @rem3:0.5rem, @rem4:0){
+	margin-top : @rem1 * @mag;
+	margin-right: @rem2 * @mag;
+	margin-bottom: @rem3 * @mag;
+	margin-left: @rem4 * @mag;
+}
+.margins-right {
+	margin-right: 0.5rem * @mag;
+}
+
+.paddings (@rem1:0.5rem, @rem2:0.5rem, @rem3:0.5rem, @rem4:0){
+	padding-top : @rem1 * @mag;
+	padding-right: @rem2 * @mag;
+	padding-bottom: @rem3 * @mag;
+	padding-left: @rem4 * @mag;
+}
+
+.ui-multibuttonentry {
+	background: rgb(29,38,60);
+	padding: 0.5rem*@mag 1.625rem*@mag 0.5rem*@mag 1.625rem*@mag;
+}
+
+.ui-label {
+	font-size: @defaultSize;
+	height: 4.3rem * @mag;
+	.margins-right;
+	.margins;
+	color: rgb(250,250,250);
+	line-height: @defaultSize;
+	text-align: center;
+	vertical-align: middle;
+}
+
+.ui-input {
+	border: hidden;
+	font-size: @defaultSize;
+	text-align: left;
+	color: rgb(250,250,250);
+	background: rgb(29,38,60);
+	.paddings(1.0625rem, 0.75rem,1.0625rem, 0.75rem);
+	vertical-align: middle;
+	position: relative;
+	.margins;
+}
+
+.ui-address {
+	color: #FAFAFA;
+	background: green;
+	font-size: @defaultSize;
+	text-decoration: none;
+	text-align: center;
+	width: 1.875rem * @mag;
+	.margins(1.625rem, 0, 1.625rem, 0);
+	line-height: @defaultSize;
+	float: right;
+	.radius;
+}
+.ui-textbtn {
+	display: inline-block;
+	font-size: @defaultSize;
+	background: rgb(82,87,103);
+	.margins;
+	.paddings(1.0625rem, 0.75rem,1.0625rem, 0.75rem);
+	color: rgb(255,255,255);
+	vertical-align: middle;
+	text-overflow : ellipsis;
+	overflow: hidden; 
+	white-space: nowrap;
+	position: relative;
+	.radius;
+}
+
+.ui-textbtn-selected {
+	background: rgb(43,58,175);
+}
+
+.ui-textbtn-focusout {
+	color: rgb(255,255,255);
+	font-size: @defaultSize;
+	text-align: center;
+	vertical-align: middle;
+}
+@media all and (min-width: 30rem * @mag) {
+	.ui-multibuttonentry h1 {
+		font-size: 1.25rem * @mag;
+		text-align: center;
+	}
+}

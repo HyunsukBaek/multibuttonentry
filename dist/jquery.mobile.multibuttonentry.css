@@ -1,0 +1,89 @@
+.radius {
+  border-radius: 0.25rem;
+}
+.margins-right {
+  margin-right: 0.25rem;
+}
+.ui-multibuttonentry {
+  background: #1d263c;
+  padding: 0.25rem 0.8125rem 0.25rem 0.8125rem;
+}
+.ui-label {
+  font-size: 1rem;
+  height: 2.15rem;
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0;
+  color: #fafafa;
+  line-height: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+.ui-input {
+  border: hidden;
+  font-size: 1rem;
+  text-align: left;
+  color: #fafafa;
+  background: #1d263c;
+  padding-top: 0.53125rem;
+  padding-right: 0.375rem;
+  padding-bottom: 0.53125rem;
+  padding-left: 0.375rem;
+  vertical-align: middle;
+  position: relative;
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0;
+}
+.ui-address {
+  color: #FAFAFA;
+  background: green;
+  font-size: 1rem;
+  text-decoration: none;
+  text-align: center;
+  width: 0.9375rem;
+  margin-top: 0.8125rem;
+  margin-right: 0;
+  margin-bottom: 0.8125rem;
+  margin-left: 0;
+  line-height: 1rem;
+  float: right;
+  border-radius: 0.25rem;
+}
+.ui-textbtn {
+  display: inline-block;
+  font-size: 1rem;
+  background: #525767;
+  margin-top: 0.25rem;
+  margin-right: 0.25rem;
+  margin-bottom: 0.25rem;
+  margin-left: 0;
+  padding-top: 0.53125rem;
+  padding-right: 0.375rem;
+  padding-bottom: 0.53125rem;
+  padding-left: 0.375rem;
+  color: #ffffff;
+  vertical-align: middle;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  border-radius: 0.25rem;
+}
+.ui-textbtn-selected {
+  background: #2b3aaf;
+}
+.ui-textbtn-focusout {
+  color: #ffffff;
+  font-size: 1rem;
+  text-align: center;
+  vertical-align: middle;
+}
+@media all and (min-width: 30rem * 0.5) {
+  .ui-multibuttonentry h1 {
+    font-size: 0.625rem;
+    text-align: center;
+  }
+}

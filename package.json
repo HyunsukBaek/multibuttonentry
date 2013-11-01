@@ -1,0 +1,27 @@
+{
+  "name": "multibuttonentry",
+  "version": "0.0.0",
+  "description": "multibuttonentry",
+  "main": "jquery.mobile.multibuttonentry.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/HyunsukBaek/multibuttonentry.git"
+  },
+  "keywords": [
+    "multibuttonentry"
+  ],
+  "author": "hs.baek",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/HyunsukBaek/multibuttonentry/issues"
+  },
+  "homepage": "https://github.com/HyunsukBaek/multibuttonentry",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-less": "~0.8.1"
+  }
+}
